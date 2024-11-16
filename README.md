@@ -29,8 +29,11 @@ The chatbot is integrated with Dialogflow and is connected to a backend system w
 
 # Other Tools:
   - **ngrok:** Used to expose the local development server to the internet so Dialogflow can access the chatbot hosted on your local machine.
+    
     ![ngrok](https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot/blob/main/ngrok%20tunnel.png)
+    
   - **MySQL Workbench:** Used for managing the MySQL database, creating tables, and running queries.
+    
     ![MySQL Workbench](https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot/blob/main/Workbench.png)
 
 ## Installation & Setup
