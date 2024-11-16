@@ -39,35 +39,48 @@ To run this project, you need to install the following Python libraries:
  - **uvicorn:** An ASGI server for serving the FastAPI app.
  - **mysql-connector-python:** A Python MySQL client library to connect your Python application to the MySQL database.
 
-## Steps to Run the Project:
+### Steps to Run the Project:
 
-1. Clone the repository to your local machine:
+1. Clone the repository:
 
-  - ``git clone https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot.git``
+    ```bash
+    git clone https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot.git
+    ```
 
 2. Navigate to the project directory:
 
-  - ``cd Food-Ordering-Tracking-Chatbot``
+    ```bash
+    cd Food-Ordering-Tracking-Chatbot
+    ```
 
-3. Install required Python packages:
+3. Install required libraries:
 
-  - ``pip install fastapi uvicorn mysql-connector-python``
+    ```bash
+    pip install fastapi uvicorn mysql-connector-python
+    ```
 
-4. Set up the database:
+4. Start the FastAPI server:
 
-  Import the ``database_schema.sql`` file into your MySQL database:
-  - ``mysql -u root -p < database_schema.sql``
-  Make sure the database schema is correctly imported.
+    ```bash
+    uvicorn main:app --reload
+    ```
+    
+5. Set up the database:
 
-5. Start the FastAPI server:
+  Import the `database_schema.sql` file into your MySQL database:
 
-  - ``uvicorn main:app --reload``
+  ```bash
+  mysql -u root -p < database_schema.sql
+  ```
 
-6. Start ngrok to create a secure HTTPS tunnel and expose your local server:
+6. Start **ngrok**:
 
-  - ``ngrok http 8000``
+    ```bash
+    ngrok http 8000
+    ```
 
-This will provide you with a HTTPS URL (e.g., ``https://2afb-182-156-3-86.ngrok-free.app``), which you will use in the Fulfillment URL section in Dialogflow to securely communicate with your local server.
+  This will provide you with a HTTPS URL (e.g., ``https://2afb-182-156-3-86.ngrok-free.app``), which you will use in the Fulfillment URL section in Dialogflow to securely 
+  communicate with your local server.
 
 7. Update the Fulfillment URL in Dialogflow with the HTTPS URL provided by ngrok.
 
