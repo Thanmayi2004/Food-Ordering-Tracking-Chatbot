@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            padding: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            gap: 20px;
+            margin-left: 20px; /* Move the gallery to the left */
+            max-width: 800px; /* Adjust width for better fit */
+        }
+
+        /* Food Item */
+        .food-item {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative; /* Needed for the description box */
+            margin-bottom: 50px; /* Increased margin to give space for the description box */
+            overflow: hidden; /* Prevent description from overlapping image */
+        }
+
+        /* Image Styling */
+        .food-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 5px; /* Increased bottom margin to create space for title */
+        }
+
+        /* Title Styling */
+        .food-item h4 {
+            margin-top: 5px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 10px; /* Reduce margin to keep title close to the image */
+        }
+
+        /* Hover Effect for Food Item */
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hover Description Box */
+        .food-item::after {
+            content: attr(data-description); /* Get description from data attribute */
+            position: absolute;
+            bottom: 0; /* Position the description box at the bottom */
+            left: 0;
+            width: 100%; /* Make the description box the same width as the item */
+            background-color: rgba(249, 168, 37, 0.8); /* Yellow background */
+            color: black;
+            padding: 15px;
+            font-size: 0.6rem;
+            border-radius: 8px;
+            text-align: center;
+            z-index: 1; /* Ensure the description is on top of other content */
+            visibility: hidden; /* Hide description by default */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show description box when hovering */
+        .food-item:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    
+
+        .main-content p {
+            margin-bottom: 5px; /* Reduce space between paragraphs */
+        }
+
+        /* Chatbot Section */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 350px;
+            height: 430px;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Icon styling */
+        .food-icon {
+            width: 30px; /* Smaller width */
+            height: 30px; /* Smaller height */
+            max-width: 30px; /* Ensure they don't exceed the max size */
+            max-height: 30px; /* Ensure they don't exceed the max size */
+            margin-left: 8px; /* Space between the food name and icon */
+            vertical-align: middle; /* Align the icon with the text vertically */
+            border-radius: 0; /* Remove any rounding effect */
+            object-fit: contain;
+        }
+
+        /* Title Styling */
+        .food-item h4 {
+            display: inline-flex; /* Align text and icon inline */
+            font-size: 0.8rem;
+            margin-top: 5px;
+            margin-left: 1px;
+            text-align: center;
+            align-items: center; /* Vertically align the icon with the text */
+            justify-content: flex-start; /* Align the content to the left */
+            padding-left: 0; /* Vertically align the icon with the text */
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Chandu's Kitchen</h1>
+        <p>Delicious, tasty and fast!</p>
+    </div>
+
+    <div class="main-content">
+        <p>Order through our chatbot "Chandu". Chandu will be helping you with placing the order,</p>
+        <p>and will be helping you track your order too!</p>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="gallery">
+
+            <!-- Food Item 1 -->
+            <div class="food-item" data-description="A crispy crust topped with melted mozzarella and savory tomato sauce.">
+                <img src="images/Cheese_pizza.jpg" alt="Pizza">
+                <h4>Cheese Pizza - 8$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 2 -->
+            <div class="food-item" data-description="A spiced rice dish with tender chicken and herbs, served with raita.">
+                <img src="images/biriyani.jpg" alt="Biryani">
+                <h4>Chicken Biryani - 9$  <img src="images/nonvegg_icon.png" alt="Non-Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 3 -->
+            <div class="food-item" data-description="A crispy crepe made from rice and lentils, filled with spiced potato.">
+                <img src="images/Masala_dosa.jpg" alt="Masala Dosa">
+                <h4>Masala Dosa - 6$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 4 -->
+            <div class="food-item" data-description="A spicy potato fritter served in a bun, often accompanied by chutneys.">
+                <img src="images/Vada_pav.jpg" alt="Vada Pav">
+                <h4>Vada Pav - 4$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 5 -->
+            <div class="food-item" data-description="A refreshing and sweet yogurt-based drink flavored with ripe mango.">
+                <img src="images/Mango_lassi.jpg" alt="Mango Lassi">
+                <h4>Mango Lassi - 5$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 6 -->
+            <div class="food-item" data-description="A combination of spicy chickpeas served with fluffy fried bread.">
+                <img src="images/Chhole_bature.jpg" alt="Chhole Bature">
+                <h4>Chhole Bature - 7$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 7 -->
+            <div class="food-item" data-description="A crispy and savory crepe made from semolina, served with chutneys.">
+                <img src="images/Rava_dosa.jpg" alt="Rava Dosa">
+                <h4>Rava Dosa - 7$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 8 -->
+            <div class="food-item" data-description="A popular snack made of spicy potato filling in a crispy shell.">
+                <img src="images/Samosa.jpg" alt="Samosa">
+                <h4>Samosa - 5$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+            <!-- Food Item 9 -->
+            <div class="food-item" data-description="A spiced vegetable mash served with buttered bread rolls.">
+                <img src="images/Pav Bhaji.jpg" alt="Pav Bhaji">
+                <h4>Pav Bhaji - 6$<img src="images/vegg_icon.png" alt="Veg" class="food-icon"></h4>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Chatbot Section (Dialogflow embedded iframe) -->
+    <div class="chatbot-container">
+        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/1fe94e30-5fba-4a87-94d5-ab32fcd19544"></iframe>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Food Menu. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

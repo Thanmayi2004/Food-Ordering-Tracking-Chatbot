@@ -1,0 +1,20 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# Ignore log files
+*.log
+
+# Ignore ngrok executable (it's not necessary to include it in Git)
+ngrok.exe
+
+# Ignore environment variables file (if any)
+.env
+
+# Ignore any large files (images, videos, etc.) if not necessary
+# *.jpg
+# *.png
+# *.mp4
