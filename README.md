@@ -41,6 +41,37 @@ To run this project, you need to install the following Python libraries:
 
 ## Steps to Run the Project:
 
-Clone the repository to your local machine:
+1. Clone the repository to your local machine:
+
 ``git clone https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot.git``
+
+2. Navigate to the project directory:
+
+``cd Food-Ordering-Tracking-Chatbot``
+
+3. Install required Python packages:
+
+``pip install fastapi uvicorn mysql-connector-python``
+
+4. Set up the database:
+
+Import the ``database_schema.sql`` file into your MySQL database:
+``mysql -u root -p < database_schema.sql``
+Make sure the database schema is correctly imported.
+
+5. Start the FastAPI server:
+
+``uvicorn main:app --reload``
+
+6. Start ngrok to create a secure HTTPS tunnel and expose your local server:
+
+ ``ngrok http 8000``
+
+This will provide you with a HTTPS URL (e.g., ``https://2afb-182-156-3-86.ngrok-free.app``), which you will use in the Fulfillment URL section in Dialogflow to securely communicate with your local server.
+
+7. Update the Fulfillment URL in Dialogflow with the HTTPS URL provided by ngrok.
+
+8. Open your browser and navigate to the ngrok URL to interact with the chatbot and place an order.
+
+
 
