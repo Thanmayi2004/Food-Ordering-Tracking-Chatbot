@@ -4,6 +4,9 @@
 The Food Ordering Tracking Chatbot is a web application that allows users to order food and track their orders through an AI-powered chatbot.
 The chatbot is integrated with Dialogflow and is connected to a backend system with an SQL database to store and update order details.
 
+![Website Preview]()
+
+
 # Features:
 - **Chatbot Integration:** A Dialogflow-powered chatbot that assists users in placing food orders.
 - **Order Tracking:** Users can track their orders in real-time using an order ID.
