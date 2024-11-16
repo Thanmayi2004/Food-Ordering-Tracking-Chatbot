@@ -23,13 +23,13 @@ The chatbot is integrated with Dialogflow and is connected to a backend system w
   - **FastAPI:** FastAPI is used as the web framework to handle HTTP requests, manage routes, and serve as the backend of the chatbot application.
   - **Dialogflow:** The chatbot is powered by Dialogflow, a Google AI tool for natural language understanding.
 
-  ![DialogFlow]()
+  ![DialogFlow](https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot/blob/main/Dialogflow%20interface.png )
   
   - **MySQL:** The database for storing food orders and their tracking status.
 
 # Other Tools:
   - **ngrok:** Used to expose the local development server to the internet so Dialogflow can access the chatbot hosted on your local machine.
-    ![ngrok]()
+    ![ngrok](https://github.com/Thanmayi2004/Food-Ordering-Tracking-Chatbot/blob/main/ngrok%20tunnel.png)
   - **MySQL Workbench:** Used for managing the MySQL database, creating tables, and running queries.
 
 ## Installation & Setup
